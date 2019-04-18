@@ -43,17 +43,13 @@ class HomeController extends Controller
     {
         $user_page = $this->user;
         $allert_data = $this->default_allert;
-        if ($user_page === null) {
-            return view('capapage_first', compact('user_page'));
-        }
-        else {
-            return view('capapage', compact('user_page', 'allert_data'));
-        }
+        
+        return view('capapage', compact('user_page', 'allert_data'));
+        
     }
 
-    public function first_capacreate () {
-        $user_page = $this->user;
-        $allert_data = $this->default_allert;
-        return view('capapage', compact('user_page', 'allert_data'));
+    public function upload_page()
+    {
+        return view('upload');
     }
 }

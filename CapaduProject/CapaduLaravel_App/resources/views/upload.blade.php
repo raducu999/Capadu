@@ -4,7 +4,7 @@
 
 <!-- Sidebar -->
   <ul class="sidebar navbar-nav" id="dashbord-shield">
-      <li class="nav-item active">
+      <li class="nav-item">
           <a class="nav-link" href="/profesor">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
@@ -48,7 +48,7 @@
           <span>Pagina proprie</span>
           </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
           <a class="nav-link" href="/upload">
           <i class="fas fa-database"></i>
           <span>Incarca resurse</span>
@@ -60,15 +60,62 @@
 
 @section('content')
 
-  <div id="dashbord_data">
-        <center>
+<div class="container">
+
+    <center>
         <br><br>
-        <img src="/Panel_Page_Assets/img/user.png" width="120px" height="120px"/>
+        <img src="/Panel_Page_Assets/img/page.png" width = "100" height = "100"></img>
+        <h1 id="text1"><font size ="5">Platforma Capadu vă oferă posibilitatea să dețineți o pagină prorie pentru a stoca materiale educationale ce pot fi accesate de oricine după configurarea acesteia.</font></h1>
         <br><br>
-        <h1>Buna ziua <b>{{{ Auth::user()->name }}}</b></h1>
-        <br><br><br>
-        <p><font size ="6">Bine ati venit pe CapaBord, de aici puteti creea un proiect Capadu sau sa porniti o camera bazata pe un proiect deja existent. Nu uitati ca platforma contine si un forum unde puteti adresa orice intrebare sau lasa o sugestie.</font></p>
-        </center>
-  </div>
+    </center>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6><b>Capacitate de stocare disponibila</b></h6>
+                </div>
+                <div class="card-body text-center">
+                    <div class="input-group mb-3">
+                        <h5>Disponibil/Total :</h5>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="progress" style="width:70%">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%; background-color: red;">
+                                70%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6><b>Incarca materiale</b></h6>
+                </div>
+                <div class="card-body text-center">
+                    <div class="input-group mb-3">
+                        <h5>Disponibil/Total :</h5>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="progress" style="width:70%">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%; background-color: red;">
+                                70%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+</div>
 
 @endsection

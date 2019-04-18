@@ -17,7 +17,7 @@ Route::get('/', 'PagesController@main')->name('main');
 Route::get('/home', 'PagesController@home_page')->name('home_page');
 Route::get('/profesor', 'HomeController@index')->name('profesor');
 Route::get('/capapage', 'HomeController@capapage_page')->name('capapage');
-Route::get('/first_capacreate', 'HomeController@first_capacreate')->name('first_capacreate');
+Route::get('/upload', 'HomeController@upload_page')->name('uploadpage');
 
 //post controller
 
