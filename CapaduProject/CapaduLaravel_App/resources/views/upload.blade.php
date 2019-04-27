@@ -93,11 +93,12 @@
 
         <div class="col-6 ">
             <div class="card shadow mb-4">
+            
                 <div class="card-header py-3">
                     <div class="row">
                         <h6 style="margin:10px;" ><b>Incarca materiale</b></h6>
 
-                        <div id="upload-progress" class="progress" style="width:70%; margin-left: 7px; margin-right: 7px;">
+                        <div id="upload-progress" class="progress" style="width:60%; margin-left: 7px; margin-right: 7px; margin-top: 1px;">
                             <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;">
                                 70%
                             </div>
@@ -108,7 +109,7 @@
 
                 <div class="card-body text-center">
                     <div class="input-group mb-3">
-                        <form method="post" action="/action-upload">
+                        <form method="post" action="/action-upload" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             Selecteaza un material:
@@ -182,93 +183,3 @@
 
 @endsection
 
-@section('js_dashbord')
-
-    <!-- RealTime Uploading-->
-    <script src="/Common/ajaxForm/jquery.form.js"></script>
-
-    <script type="text/javascript">
-
-        function validate(formData, jqForm, options) {
-
-            var form = jqForm[0];
-
-            if (!form.file.value) {
-
-                alert('File not found');
-
-                return false;
-
-            }
-
-        }
-
-        (function() {
-
-    
-
-        var bar = $('.bar');
-
-        var percent = $('.percent');
-
-        var status = $('#status');
-
-    
-
-        $('form').ajaxForm({
-
-            beforeSubmit: validate,
-
-            beforeSend: function() {
-
-                status.empty();
-
-                var percentVal = '0%';
-
-                var posterValue = $('input[name=file]').fieldValue();
-
-                bar.width(percentVal)
-
-                percent.html(percentVal);
-
-            },
-
-            uploadProgress: function(event, position, total, percentComplete) {
-
-                var percentVal = percentComplete + '%';
-
-                bar.width(percentVal)
-
-                percent.html(percentVal);
-
-            },
-
-            success: function() {
-
-                var percentVal = 'Wait, Saving';
-
-                bar.width(percentVal)
-
-                percent.html(percentVal);
-
-            },
-
-            complete: function(xhr) {
-
-                status.html(xhr.responseText);
-
-                alert('Uploaded Successfully');
-
-                window.location.href = "/file-upload";
-
-            }
-
-        });
-
-        
-
-        })();
-
-    </script>
-
-@endsection
