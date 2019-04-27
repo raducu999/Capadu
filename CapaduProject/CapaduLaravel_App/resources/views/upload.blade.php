@@ -183,3 +183,115 @@
 
 @endsection
 
+@section('js_dashbord')
+
+<!-- RealtimeUpload-->
+<script src="/Common/jquery/jquery.js"></script>
+<script src="/Common/ajaxForm/jquery.form.js"></script>
+
+<!-- Bootstrap core JavaScript-->
+<script src="/Panel_Page_Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="/Panel_Page_Assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Page level plugin JavaScript-->
+<script src="/Panel_Page_Assets/vendor/chart.js/Chart.min.js"></script>
+<script src="/Panel_Page_Assets/vendor/datatables/jquery.dataTables.js"></script>
+<script src="/Panel_Page_Assets/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="/Panel_Page_Assets/js/sb-admin.min.js"></script>
+
+<!-- Demo scripts for this page-->
+<script src="/Panel_Page_Assets/js/demo/datatables-demo.js"></script>
+<script src="/Panel_Page_Assets/js/demo/chart-area-demo.js"></script>
+
+
+<script type="text/javascript">
+
+    function validate(formData, jqForm, options) {
+
+        var form = jqForm[0];
+
+        if (!form.file.value) {
+
+            alert('File not found');
+
+            return false;
+
+        }
+
+    }
+
+ 
+
+    (function() {
+
+ 
+
+    var bar = $('.bar');
+
+    var percent = $('.percent');
+
+    var status = $('#status');
+
+ 
+
+    $('form').ajaxForm({
+
+        beforeSubmit: validate,
+
+        beforeSend: function() {
+
+            status.empty();
+
+            var percentVal = '0%';
+
+            var posterValue = $('input[name=file]').fieldValue();
+
+            bar.width(percentVal)
+
+            percent.html(percentVal);
+
+        },
+
+        uploadProgress: function(event, position, total, percentComplete) {
+
+            var percentVal = percentComplete + '%';
+
+            bar.width(percentVal)
+
+            percent.html(percentVal);
+
+        },
+
+        success: function() {
+
+            var percentVal = 'Wait, Saving';
+
+            bar.width(percentVal)
+
+            percent.html(percentVal);
+
+        },
+
+        complete: function(xhr) {
+
+            status.html(xhr.responseText);
+
+            alert('Uploaded Successfully');
+
+            window.location.href = "/file-upload";
+
+        }
+
+    });
+
+     
+
+    })();
+
+</script>
+
+@endsection

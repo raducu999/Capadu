@@ -74,3 +74,19 @@
   </div>
 
 @endsection
+
+@section('js_dashbord')
+
+<!-- Common-->
+<script src="/Common/jquery/jquery.js"></script>
+
+<!-- Bootstrap core JavaScript-->
+<script src="/Panel_Page_Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="/Panel_Page_Assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="/Panel_Page_Assets/js/sb-admin.min.js"></script>
+
+@endsection
