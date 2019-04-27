@@ -19,7 +19,7 @@ class FileController extends Controller
 
         $fileName = time().'.'.request()->fileToUpload->getClientOriginalExtension();
 
-        request()->fileToUpload->move(public_path('UserFiles'), $fileName);
+        request()->fileToUpload->move(public_path('User_Files'), $fileName);
 
         return response()->json(['success'=>'You have successfully upload file.']);
         
