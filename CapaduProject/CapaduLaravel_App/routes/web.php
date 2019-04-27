@@ -19,9 +19,14 @@ Route::get('/profesor', 'HomeController@index')->name('profesor');
 Route::get('/capapage', 'HomeController@capapage_page')->name('capapage');
 Route::get('/upload', 'HomeController@upload_page')->name('uploadpage');
 
+//post routes
+
+Route::post('/action-upload', 'FileController@upload')->name('upload.upload');
+Route::post('/action-delete', 'FileController@delete')->name('upload.delete');
+
 //dinamic pages controller
 
-Route::get('pages/{id}', ['uses' =>'PagesController@dinamic_page']);
+Route::get('pages/{id}', 'PagesController@dinamic_page')->name('profesor.page');
 
 //Admin Authenthication
 

@@ -9,5 +9,11 @@ use App\File;
 
 class FileController extends Controller
 {
-    
+    public function upload (Request $data) {
+
+    }
+
+    public function delete ($id) {
+        
+    }
 }
