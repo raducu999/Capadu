@@ -98,7 +98,7 @@
                     <div class="row">
                         <h6 style="margin:10px;" ><b>Incarca materiale</b></h6>
 
-                        <div id="upload-progress" class="progress" style="width:60%; margin-left: 7px; margin-right: 7px; margin-top: 1px;">
+                        <div id="upload-progress" class="progress" style="width:60%; margin-left: 7px; margin-right: 7px; margin-top: 14px;">
                             <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;">
                                 70%
                             </div>
