@@ -60,11 +60,18 @@
 
 @section('content')
 
-  <center>
+  <div class="text-center">
       <br><br>
-      <img src="/Panel_Page_Assets/img/page.png" width = "150" height = "150"></img>
-      <h1 id="text1"><font size ="6">Platforma Capadu vă oferă posibilitatea să dețineți o pagină prorie pentru a stoca materiale educationale ce pot fi accesate de oricine după configurarea acesteia.</font></h1>
+      <img src="/Panel_Page_Assets/img/page.png" width = "100" height = "100"/>
+      <h1 id="text1">
+      <font size ="5">
+      
+      Platforma Capadu vă oferă posibilitatea să dețineți o pagină prorie pentru a 
+      stoca materiale educationale ce pot fi accesate de oricine după configurarea acesteia.
+      
+      </font></h1>
+      
       <a class="buton1" href="/first_capacreate">Configurare</a>
-  </center>
+  </div>
 
 @endsection

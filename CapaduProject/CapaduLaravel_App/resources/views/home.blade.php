@@ -61,14 +61,16 @@
 @section('content')
 
   <div id="dashbord_data">
-        <center>
+
+    <div class="text-center">
         <br><br>
-        <img src="/Panel_Page_Assets/img/user.png" width="120px" height="120px"/>
+        <img src="/Panel_Page_Assets/img/user.png" width="100px" height="100px"/>
         <br><br>
         <h1>Buna ziua <b>{{{ Auth::user()->name }}}</b></h1>
         <br><br><br>
-        <p><font size ="6">Bine ati venit pe CapaBord, de aici puteti creea un proiect Capadu sau sa porniti o camera bazata pe un proiect deja existent. Nu uitati ca platforma contine si un forum unde puteti adresa orice intrebare sau lasa o sugestie.</font></p>
-        </center>
+        <p><font size ="5">Bine ati venit pe CapaBord, de aici puteti creea un proiect Capadu sau sa porniti o camera bazata pe un proiect deja existent. Nu uitati ca platforma contine si un forum unde puteti adresa orice intrebare sau lasa o sugestie.</font></p>
+    </div>
+
   </div>
 
 @endsection

@@ -65,7 +65,11 @@
     </nav>
 
     <header class="masthead text-center text-white">
-      <div id="capadu"><center><img src="/Common/img/capadu.png" width="500px" height="500px"></img></center></div>
+      <div id="capadu">
+
+      <div class="text-center"> <img src="/Common/img/capadu.png" width="500px" height="500px"/> </div>
+      
+      </div>
       <div class="masthead-content">
         <div class="container">
           <h1 class="masthead-heading mb-0">CAPADU</h1>
@@ -86,13 +90,13 @@
         <tr>
           <td id="section1">
 
-            <center>
-            <br><br>
-            <h1 class="subsection">{{ Lang::get('home_page.st_text1') }}</h1>
-            <br><br><br>
-            <a href="/" class="btn rounded-pill red text-white">{{ Lang::get('home_page.st_text2') }}</a>
-            <p class="subsection infotext">{{ Lang::get('home_page.st_text3') }}</p>
-            </center>
+            <div class="text-center">
+              <br><br>
+              <h1 class="subsection">{{ Lang::get('home_page.st_text1') }}</h1>
+              <br><br><br>
+              <a href="/" class="btn rounded-pill red text-white">{{ Lang::get('home_page.st_text2') }}</a>
+              <p class="subsection infotext">{{ Lang::get('home_page.st_text3') }}</p>
+            </div>
 
           </td>
 
@@ -100,13 +104,13 @@
 
           <td id="section2">
 
-            <center>
-            <br><br>
-            <h1 class="subsection">{{ Lang::get('home_page.dr_text1') }}</h1>
-            <br><br><br>
-            <a href="/login" class="btn rounded-pill orange text-white">{{ Lang::get('home_page.dr_text2') }}</a>
-            <p class="subsection infotext">{{ Lang::get('home_page.dr_text3') }}</p>
-            </center>
+            <div class="text-center">
+              <br><br>
+              <h1 class="subsection">{{ Lang::get('home_page.dr_text1') }}</h1>
+              <br><br><br>
+              <a href="/login" class="btn rounded-pill orange text-white">{{ Lang::get('home_page.dr_text2') }}</a>
+              <p class="subsection infotext">{{ Lang::get('home_page.dr_text3') }}</p>
+            </div>
 
           </td>
         </tr>
@@ -132,52 +136,53 @@
       </div>
 
       <div class="features" id="features">
-          <center>
-          <div class="container">
-            <div class="section-heading text-center">
-                <h2 class="text-black infotext2" style="color: #bd0716;">{{ Lang::get('home_page.phoneTitle') }}</h2>
-              <hr class="blackunderline">
-            </div>
-            <br><br><br>
-            <div class="row">
-              <div class="col-lg-4 my-auto">
-                <div class="device-container">
-                  <div class="">
-                    <div class="device">
-                      <div class="screen">
-                        <img src="/Front_Page_Assets/img/phone.png" class="img-fluid" alt="">
+          <div class="text-center">
+            <div class="container">
+              <div class="section-heading text-center">
+                  <h2 class="text-black infotext2" style="color: #bd0716;">{{ Lang::get('home_page.phoneTitle') }}</h2>
+                <hr class="blackunderline">
+              </div>
+              <br><br><br>
+              <div class="row">
+                <div class="col-lg-4 my-auto">
+                  <div class="device-container">
+                    <div class="">
+                      <div class="device">
+                        <div class="screen">
+                          <img src="/Front_Page_Assets/img/phone.png" class="img-fluid" alt="">
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-8 my-auto">
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="feature-item">
-                        <i class="fa fa-mobile figurine" style="font-size:100px;color: #bd0716;"></i>
-                        <h3>{{ Lang::get('home_page.phone_1') }}</h3>
+                <div class="col-lg-8 my-auto">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="feature-item">
+                          <i class="fa fa-mobile figurine" style="font-size:100px;color: #bd0716;"></i>
+                          <h3>{{ Lang::get('home_page.phone_1') }}</h3>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="feature-item">
+                          <i class="fa fa-brain figurine" style="font-size:100px;color: #bd0716;"></i>
+                          <h3>{{ Lang::get('home_page.phone_2') }}</h3>
+                        </div>
                       </div>
                     </div>
-                    <div class="col-lg-6">
-                      <div class="feature-item">
-                        <i class="fa fa-brain figurine" style="font-size:100px;color: #bd0716;"></i>
-                        <h3>{{ Lang::get('home_page.phone_2') }}</h3>
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="feature-item">
+                          <i class="fas fa-check-circle figurine" style="font-size:100px;color: #bd0716;"></i>
+                          <h3>{{ Lang::get('home_page.phone_3') }}</h3>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="feature-item">
-                        <i class="fas fa-check-circle figurine" style="font-size:100px;color: #bd0716;"></i>
-                        <h3>{{ Lang::get('home_page.phone_3') }}</h3>
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="feature-item">
-                        <i class="fab fa-accusoft figurine" style="font-size:100px;color: #bd0716;"></i>
-                        <h3>{{ Lang::get('home_page.phone_4') }}</h3>
+                      <div class="col-lg-6">
+                        <div class="feature-item">
+                          <i class="fab fa-accusoft figurine" style="font-size:100px;color: #bd0716;"></i>
+                          <h3>{{ Lang::get('home_page.phone_4') }}</h3>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -185,7 +190,6 @@
               </div>
             </div>
           </div>
-          </center>
           <br><br><br><br><br>
       </div>
 
@@ -210,11 +214,12 @@
 
       <div id="contact">
           <br><br><br>
-          <center>
+
+          <div class="text-center">
             <h1 class="text-white">Contact</h1>
             <br><br>
             <h3 class="text-white">Email  :  radustefan1302@gmail.com</h3>
-          </center>
+          </div>
 
           <!--
           <ul>

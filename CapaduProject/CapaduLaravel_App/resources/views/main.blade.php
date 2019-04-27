@@ -18,6 +18,9 @@
     <!-- Custom styles for this template -->
     <link href="/Main_Page_Assets/css/main.css" rel="stylesheet">
 
+    <!-- Bootstrap core CSS-->
+    <link href="/Common/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -45,11 +48,12 @@
 </div>
 
 
-<div id="text">
+<div id="text" class="text-center">
 
-<center><p id="text1">Creaza o camera gratis la platforma <a href="/home" id="text2"> Capadu </a> </p>  </center>
+    <p id="text1">Creaza o camera gratis la platforma <a href="/home" id="text2"> Capadu </a> </p>
 
 </div>
+
 <div id="particles-js"></div>
 
 

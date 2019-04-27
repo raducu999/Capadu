@@ -62,12 +62,12 @@
 
 <div class="container">
 
-    <center>
+    <div class="text-center">
         <br><br>
         <img src="/Panel_Page_Assets/img/page.png" width = "100" height = "100"></img>
         <h1 id="text1"><font size ="5">Platforma Capadu vă oferă posibilitatea să dețineți o pagină prorie pentru a stoca materiale educationale ce pot fi accesate de oricine după configurarea acesteia.</font></h1>
         <br><br>
-    </center>
+    </div>
 
     <div class="row">
         <div class="col-6">
@@ -82,7 +82,7 @@
 
                     <div class="input-group mb-3">
                         <div class="progress" style="width:70%">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%; background-color: red;">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;">
                                 70%
                             </div>
                         </div>
@@ -98,20 +98,69 @@
                 </div>
                 <div class="card-body text-center">
                     <div class="input-group mb-3">
-                        <h5>Disponibil/Total :</h5>
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <div class="progress" style="width:70%">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%; background-color: red;">
-                                70%
-                            </div>
-                        </div>
+                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                            Selecteaza un material:
+                            <input type="file" name="fileToUpload" id="fileToUpload">
+                            <input type="submit" class="btn btn-primary btn-block" value="Incarca Materialul" name="submit" style="width:70%; margin-top: 10px;">
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
 
+    </div>
+
+    <div class="col-13">
+        <div class="card shadow mb-4">
+
+            <div class="card-header text-center py-3">
+                <h6><b>Lista materialelor</b></h6>
+            </div>
+            
+            <div class="card-body">
+
+                <div class="table-responsive">
+
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>Nume</th>
+                        <th>Marime</th>
+                        <th>Data Incarcarii</th>
+                        <th>Copiaza Link-ul</th>
+                        <th>Descarca</th>
+                        <th>Sterge</th>
+                    </tr>
+                    </thead>
+
+                    <tfoot>
+                    <tr>
+                        <th>Nume</th>
+                        <th>Marime</th>
+                        <th>Data Incarcarii</th>
+                        <th>Copiaza Link-ul</th>
+                        <th>Descarca</th>
+                        <th>Sterge</th>
+                    </tr>
+                    </tfoot>
+
+                    <tbody>
+                    <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>61</td>
+                        <td>2011/04/25</td>
+                        <td>$320,800</td>
+                    </tr>
+                    </tbody>
+
+                </table>
+
+                </div>
+
+            </div>
+        </div>
     </div>
 
     

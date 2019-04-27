@@ -19,10 +19,6 @@ Route::get('/profesor', 'HomeController@index')->name('profesor');
 Route::get('/capapage', 'HomeController@capapage_page')->name('capapage');
 Route::get('/upload', 'HomeController@upload_page')->name('uploadpage');
 
-//post controller
-
-Route::post('/capacreate_control', 'InteractiveController@capacreate_control')->name('capacreate_control');
-
 //dinamic pages controller
 
 Route::get('pages/{id}', ['uses' =>'PagesController@dinamic_page']);

@@ -8,9 +8,6 @@ use Auth;
 
 class HomeController extends Controller
 {
-
-    private $user;
-
     /**
      * Create a new controller instance.
      *
@@ -19,12 +16,6 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware(function ($request, $next) {
-            $this->user = \App\Helpers\AppHelper::instance()->get_page_by_user();
-
-            return $next($request);
-        });
-        $this->default_allert = '';
     }
 
     /**
@@ -35,16 +26,13 @@ class HomeController extends Controller
 
     public function index()
     {
-        $user_page = $this->user;
-        return view('home', compact('user_page'));
+        return view('home');
     }
 
     public function capapage_page()
     {
-        $user_page = $this->user;
-        $allert_data = $this->default_allert;
-        
-        return view('capapage', compact('user_page', 'allert_data'));
+
+        return view('capapage');
         
     }
 
