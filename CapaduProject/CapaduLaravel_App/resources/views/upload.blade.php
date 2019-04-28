@@ -99,8 +99,8 @@
                         <h6 style="margin:10px;" ><b>Incarca materiale</b></h6>
 
                         <div id="upload-progress" class="progress" style="width:60%; margin-left: 7px; margin-right: 7px; margin-top: 14px;">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;">
-                                70%
+                            <div id="upload-bar" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
+                                0%
                             </div>
                         </div>
 
@@ -210,37 +210,18 @@
 
 <script type="text/javascript">
 
-    function validate(formData, jqForm, options) {
-
-        var form = jqForm[0];
-
-        if (!form.file.value) {
-
-            alert('File not found');
-
-            return false;
-
-        }
-
-    }
-
- 
-
     (function() {
 
  
+    var bar = $('#upload-bar');
 
-    var bar = $('.bar');
-
-    var percent = $('.percent');
+    var percent = $('#upload-bar');
 
     var status = $('#status');
 
  
 
     $('form').ajaxForm({
-
-        beforeSubmit: validate,
 
         beforeSend: function() {
 
@@ -268,7 +249,7 @@
 
         success: function() {
 
-            var percentVal = 'Wait, Saving';
+            var percentVal = 'Fisierul se salveaza';
 
             bar.width(percentVal)
 
@@ -280,9 +261,7 @@
 
             status.html(xhr.responseText);
 
-            alert('Uploaded Successfully');
-
-            window.location.href = "/file-upload";
+            window.location.href = "/upload";
 
         }
 
