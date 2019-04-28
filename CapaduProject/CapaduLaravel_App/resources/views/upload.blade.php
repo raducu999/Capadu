@@ -70,7 +70,7 @@
 
         <div class="alert">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-            <strong>Ultima Actiune :</strong> Indicates a dangerous or potentially negative action.
+            <strong>Ultima Actiune : </strong> {{{ Auth::user()->upload_activity }}}
         </div>
 
         <br><br>
