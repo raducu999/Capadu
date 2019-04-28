@@ -64,8 +64,15 @@
 
     <div class="text-center">
         <br><br>
-        <img src="/Panel_Page_Assets/img/page.png" width = "100" height = "100"></img>
+        <img src="/Panel_Page_Assets/img/upload.png" width = "100" height = "100"></img>
         <h1 id="text1"><font size ="5">Platforma Capadu vă oferă posibilitatea să dețineți o pagină prorie pentru a stoca materiale educationale ce pot fi accesate de oricine după configurarea acesteia.</font></h1>
+        <br><br>
+
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>Ultima Actiune :</strong> Indicates a dangerous or potentially negative action.
+        </div>
+
         <br><br>
     </div>
 
@@ -185,9 +192,12 @@
 
 @section('js_dashbord')
 
-<!-- RealtimeUpload-->
+<!-- CommonScripts-->
 <script src="/Common/jquery/jquery.js"></script>
+
+<!-- RealtimeUpload-->
 <script src="/Common/ajaxForm/jquery.form.js"></script>
+<script src="/Common/ajaxForm/plugin.js"></script>
 
 <!-- Bootstrap core JavaScript-->
 <script src="/Panel_Page_Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -207,70 +217,5 @@
 <script src="/Panel_Page_Assets/js/demo/datatables-demo.js"></script>
 <script src="/Panel_Page_Assets/js/demo/chart-area-demo.js"></script>
 
-
-<script type="text/javascript">
-
-    (function() {
-
- 
-    var bar = $('#upload-bar');
-
-    var percent = $('#upload-bar');
-
-    var status = $('#status');
-
- 
-
-    $('form').ajaxForm({
-
-        beforeSend: function() {
-
-            status.empty();
-
-            var percentVal = '0%';
-
-            var posterValue = $('input[name=file]').fieldValue();
-
-            bar.width(percentVal)
-
-            percent.html(percentVal);
-
-        },
-
-        uploadProgress: function(event, position, total, percentComplete) {
-
-            var percentVal = percentComplete + '%';
-
-            bar.width(percentVal)
-
-            percent.html(percentVal);
-
-        },
-
-        success: function() {
-
-            var percentVal = 'Fisierul se salveaza';
-
-            bar.width(percentVal)
-
-            percent.html(percentVal);
-
-        },
-
-        complete: function(xhr) {
-
-            status.html(xhr.responseText);
-
-            window.location.href = "/upload";
-
-        }
-
-    });
-
-     
-
-    })();
-
-</script>
 
 @endsection

@@ -20,6 +20,7 @@
 
     <!-- Page level plugin CSS-->
     <link href="/Panel_Page_Assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="/Common/css/alerts.css" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="/Panel_Page_Assets/css/sb-admin.css" rel="stylesheet">
