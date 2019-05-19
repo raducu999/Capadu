@@ -15,9 +15,10 @@ class UserFilesTable extends Migration
     {
         Schema::connection('mysql2')->create('user_file', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('belongtouser_id');
             $table->string('nume');
             $table->string('ruta');
-            $table->integer('marime');
+            $table->float('marime');
             $table->timestamps();
         });
     }

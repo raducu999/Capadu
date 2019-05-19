@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('connection_token')->default(0);
-            $table->integer('used_capacity')->default(0);
             $table->string('upload_activity')->default("Nu ați încărcat nimic");
+            $table->float('used_capacity')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

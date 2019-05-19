@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 use App\File;
 use App\User;
+use Auth;
 
 class FileController extends Controller
 {
@@ -19,8 +19,27 @@ class FileController extends Controller
         $request->validate([
             'fileToUpload' => 'required',
         ]);
+
+        $usedcapacity = $user->used_capacity;
+        $totalcapacity = intval(env("USER_DataCapacity"));
+        
+
+        if ($usedcapacity + (request()->fileToUpload->getSize())/1000000 > $totalcapacity) {
+            $user->upload_activity = "nu s-a putut incarca materialul selectat, depasiti capacitatea disponibila";
+            $user->save();
+            return;
+        }
         
         $fileName = time().'.'.request()->fileToUpload->getClientOriginalExtension();
+        $user->used_capacity = $user->used_capacity + (request()->fileToUpload->getSize())/1000000;
+        $user->save();
+
+        $filerecord = new File;
+        $filerecord->nume = request()->fileToUpload->getClientOriginalName();
+        $filerecord->ruta = $fileName;
+        $filerecord->marime = (request()->fileToUpload->getSize())/1000000;
+        $filerecord->belongtouser_id = $user->id;
+        $filerecord->save();
 
         request()->fileToUpload->move(public_path('User_Files'), $fileName);
 

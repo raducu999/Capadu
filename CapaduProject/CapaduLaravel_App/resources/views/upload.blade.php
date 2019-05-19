@@ -84,13 +84,13 @@
                 </div>
                 <div class="card-body text-center">
                     <div class="input-group mb-3">
-                        <h5>Disponibil/Total :</h5>
+                        <h5>Disponibil/Total : {{$data["usedcapacity"]."/".$data["totalcapacity"]}}</h5>
                     </div>
 
                     <div class="input-group mb-3">
                         <div class="progress" style="width:70%">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;">
-                                70%
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{$data['percent']}}" aria-valuemin="0" aria-valuemax="100" style="width:{{$data['percent'].'%'}};">
+                                {{$data['percent'].'%'}}
                             </div>
                         </div>
                     </div>
@@ -166,14 +166,18 @@
                     </tfoot>
 
                     <tbody>
-                    <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
-                    </tr>
+                    
+                    @foreach($data['files'] as $file)
+                        <tr>
+                            <td>{{$file->nume}}</td>
+                            <td>{{$file->marime}} MB</td>
+                            <td>{{$file->created_at}}</td>
+                            <td>{{$file->ruta}}</td>
+                            <td>2011/04/25</td>
+                            <td>$320,800</td>
+                        </tr>
+                    @endforeach
+
                     </tbody>
 
                 </table>
