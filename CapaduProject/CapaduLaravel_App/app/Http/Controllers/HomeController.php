@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\File;
+use App\FileRecord;
 use Auth;
 
 class HomeController extends Controller
@@ -39,7 +39,7 @@ class HomeController extends Controller
 
     public function upload_page()
     {
-        $files = File::all()->where('belongtouser_id', '=' , Auth::user()->id);
+        $files = FileRecord::all()->where('belongtouser_id', '=' , Auth::user()->id);
 
         $usedcapacity = Auth::user()->used_capacity;
         $totalcapacity = intval(env("USER_DataCapacity"));;

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
-use App\File;
+use App\FileRecord;
 use App\User;
 use Auth;
 
@@ -34,7 +35,7 @@ class FileController extends Controller
         $user->used_capacity = $user->used_capacity + (request()->fileToUpload->getSize())/1000000;
         $user->save();
 
-        $filerecord = new File;
+        $filerecord = new FileRecord;
         $filerecord->nume = request()->fileToUpload->getClientOriginalName();
         $filerecord->ruta = $fileName;
         $filerecord->marime = (request()->fileToUpload->getSize())/1000000;
@@ -49,7 +50,17 @@ class FileController extends Controller
         return;
         
     }
-    public function delete ($id) {
-        
+    public function delete ($name) {
+        $file = FileRecord::where('ruta', '=', $name)->firstOrFail();
+        unlink(public_path('User_Files').'/'.$file->ruta);
+
+        $user = User::find(Auth::user()->id);
+        $user->upload_activity = "materialul a fost sters";
+        $user->used_capacity = $user->used_capacity - $file->marime;
+        $user->save();
+
+        $file->delete();
+
+        return;
     }
 }

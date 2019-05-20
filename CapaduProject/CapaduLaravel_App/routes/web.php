@@ -22,7 +22,8 @@ Route::get('/upload', 'HomeController@upload_page')->name('uploadpage');
 //post routes
 
 Route::post('/action-upload', 'FileController@upload')->name('upload.upload');
-Route::post('/action-delete', 'FileController@delete')->name('upload.delete');
+Route::post('/action-delete/{name}', 'FileController@delete')->name('upload.delete');
+Route::get('/action-download/{name}', 'FileController@download')->name('upload.download');
 
 //dinamic pages controller
 

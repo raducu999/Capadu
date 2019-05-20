@@ -173,7 +173,15 @@
                             <td>{{$file->marime}} MB</td>
                             <td>{{$file->created_at}}</td>
                             <td>{{$file->ruta}}</td>
-                            <td>2011/04/25</td>
+                            <td>
+                            
+                            <form method="post" action="/action-delete/{{$file->ruta}}">
+                                {{ csrf_field() }}
+
+                                <input type="submit" class="btn btn-primary btn-block" value="Sterge">
+                            </form>
+
+                            </td>
                             <td>$320,800</td>
                         </tr>
                     @endforeach
