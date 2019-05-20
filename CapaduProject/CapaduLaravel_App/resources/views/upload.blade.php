@@ -148,9 +148,8 @@
                         <th>Nume</th>
                         <th>Marime</th>
                         <th>Data Incarcarii</th>
-                        <th>Copiaza Link-ul</th>
-                        <th>Descarca</th>
-                        <th>Sterge</th>
+                        <th>Link</th>
+                        <th>Actiune</th>
                     </tr>
                     </thead>
 
@@ -159,9 +158,8 @@
                         <th>Nume</th>
                         <th>Marime</th>
                         <th>Data Incarcarii</th>
-                        <th>Copiaza Link-ul</th>
-                        <th>Descarca</th>
-                        <th>Sterge</th>
+                        <th>Link</th>
+                        <th>Actiune</th>
                     </tr>
                     </tfoot>
 
@@ -172,17 +170,24 @@
                             <td>{{$file->nume}}</td>
                             <td>{{$file->marime}} MB</td>
                             <td>{{$file->created_at}}</td>
-                            <td>{{$file->ruta}}</td>
+                            <td>http://capadu/action-download/{{$file->ruta}}</td>
                             <td>
-                            
-                            <form method="post" action="/action-delete/{{$file->ruta}}">
-                                {{ csrf_field() }}
 
-                                <input type="submit" class="btn btn-primary btn-block" value="Sterge">
-                            </form>
+                            <div class="custom-row">
+                            
+                                <form method="post" action="/action-delete/{{$file->ruta}}">
+                                    {{ csrf_field() }}
+
+                                    <input type="submit" class="btn btn-primary btn-block" value="Sterge">
+                                </form>
+
+                                
+                                <a href="http://capadu/action-download/{{$file->ruta}}" class="btn btn-primary btn-block">Descarca</a>
+                                
+
+                            </div>
 
                             </td>
-                            <td>$320,800</td>
                         </tr>
                     @endforeach
 

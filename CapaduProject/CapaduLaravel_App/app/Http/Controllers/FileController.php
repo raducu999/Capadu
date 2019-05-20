@@ -63,4 +63,10 @@ class FileController extends Controller
 
         return;
     }
+
+    public function download ($name) {
+        $pathToFile = public_path('User_Files').'/'.$name;
+
+        return response()->download($pathToFile);
+    }
 }

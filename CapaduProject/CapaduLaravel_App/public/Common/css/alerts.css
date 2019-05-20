@@ -18,3 +18,20 @@ transition: 0.3s;
 .closebtn:hover {
 color:black;
 }
+
+.custom-row {
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-row > * {
+    margin: 4px
+}
+
+.custom-row > a {
+    width: 100px;
+}
