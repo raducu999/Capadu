@@ -25,34 +25,25 @@
 
 <body>
 
-<!-- <div id="overlay"></div> -->
 
+<div id="MainSection">
 
-<img id="logo" src="/Common/img/capadu.png" width="300px" height="300px"></img>
+    <img id="logo" src="/Common/img/capadu.png" width="280px" height="280px"/>
 
-
-<div id="ForumSection">
     <form action="http://capapp:3000/player/">
-        <div class="block">
-            <input class = "infield" type = "text" name= "name" placeholder="Numele" autofocus/>
-        </div>
-        <br>
-        <div class="block">
-            <input class = "infield" type= "text" name= "pin" placeholder="ID-ul" autofocus/>
-        </div>
-        <br>
-        <div class="block">
-            <button id = "joinButton">Join</button>
-        </div>
+
+        <input class = "input_field" type = "text" name= "name" placeholder="Numele" autofocus/>
+
+        <input class = "input_field" type= "text" name= "pin" placeholder="ID-ul" autofocus/>
+
+        <button id = "joinButton">Join</button>
+
     </form>
-</div>
 
-
-<div id="text" class="text-center">
-
-    <p id="text1">Creaza o camera gratis la platforma <a href="/home" id="text2"> Capadu </a> </p>
+    <p>Creaza o camera gratis la platforma <a href="/home"> Capadu </a> </p>
 
 </div>
+
 
 <div id="particles-js"></div>
 
