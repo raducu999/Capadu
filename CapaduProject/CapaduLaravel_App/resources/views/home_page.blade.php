@@ -67,7 +67,7 @@
     <header class="masthead text-center text-white">
       <div id="capadu">
 
-      <div class="text-center"> <img src="/Common/img/capadu.png" width="500px" height="500px"/> </div>
+      <div class="text-center"> <img src="/Common/img/capadu.png"/> </div>
       
       </div>
       <div class="masthead-content">
@@ -85,10 +85,9 @@
 
     <div id="shield">
 
-      <table style="width:100%">
-            
-        <tr>
-          <td id="section1">
+      <div class="col-container">
+
+          <div class="col" id="section1">
 
             <div class="text-center">
               <br><br>
@@ -98,11 +97,9 @@
               <p class="subsection infotext">{{ Lang::get('home_page.st_text3') }}</p>
             </div>
 
-          </td>
+          </div>
 
-          <td id="devider"></td>
-
-          <td id="section2">
+          <div class="col" id="section2">
 
             <div class="text-center">
               <br><br>
@@ -112,11 +109,9 @@
               <p class="subsection infotext">{{ Lang::get('home_page.dr_text3') }}</p>
             </div>
 
-          </td>
-        </tr>
+          </div>
 
-      </table>
-
+      </div>
 
       <!-- About Section -->
       <div class="container" id="about">
@@ -211,29 +206,16 @@
             </div>
           </div>
       </div>
-
-      <div id="contact">
-          <br><br><br>
-
-          <div class="text-center">
-            <h1 class="text-white">Contact</h1>
-            <br><br>
-            <h3 class="text-white">Email  :  radustefan1302@gmail.com</h3>
-          </div>
-
-          <!--
-          <ul>
-
-            <li><i class="fab fa-facebook-f"></i></li>
-
-            <li><i class="fab fa-facebook-f"></i></li>
-
-          </ul>
-          -->
-
-      </div>
       
       <div id="particles-js">
+        
+        <div id="contact">
+          <div class="text-center">
+            <h1 class="text-white">Contact</h1>
+            <h3 class="text-white">Email  :  radustefan1302@gmail.com</h3>
+          </div>
+        </div>
+
         <!-- Footer -->
         <div class="py-5 bg-black">
            <div class="container">
